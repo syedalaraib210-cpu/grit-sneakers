@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — GRIT</title>
+<meta name="description" content="Review the sneakers in your GRIT cart before checkout.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="cart">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">GR<span>I</span>T</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="shop.html" data-page="shop">Shop</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="page-header container">
+    <h1>Your cart</h1>
+    <p>Items are saved in this browser, so your cart is still here if you come back later.</p>
+  </div>
+
+  <section class="container section">
+    <div class="cart-layout">
+      <div>
+        <div id="cartList"></div>
+        <div id="emptyCart" class="empty-cart" style="display:none;">
+          <h3>Your cart is empty</h3>
+          <p>Looks like you haven't added any sneakers yet.</p>
+          <br>
+          <a href="shop.html" class="btn btn-primary">Browse the shop</a>
+        </div>
+      </div>
+
+      <aside id="cartSummary" class="cart-summary">
+        <h3>Order summary</h3>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">Rs 0</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="cartShipping">Rs 0</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="cartTotal">Rs 0</span>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary btn-full" onclick="alert('This is a static class project — checkout is not wired up to real payments.')">Checkout</button>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 GRIT Sneaker Boutique. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

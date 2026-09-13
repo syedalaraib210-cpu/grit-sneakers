@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop — GRIT</title>
+<meta name="description" content="Browse the full GRIT sneaker collection. Filter by category and sort by price.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="shop">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">GR<span>I</span>T</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="shop.html" data-page="shop">Shop</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="page-header container">
+    <h1>Shop the collection</h1>
+    <p>Filter by category or sort by price to find your next pair. Quantities are set with the stepper before adding to your cart.</p>
+  </div>
+
+  <section class="container section">
+    <div class="filter-bar">
+      <div class="filter-group">
+        <button type="button" class="filter-chip active" data-category="All">All</button>
+        <button type="button" class="filter-chip" data-category="Running">Running</button>
+        <button type="button" class="filter-chip" data-category="Basketball">Basketball</button>
+        <button type="button" class="filter-chip" data-category="Lifestyle">Lifestyle</button>
+        <button type="button" class="filter-chip" data-category="Skate">Skate</button>
+      </div>
+      <select id="sortSelect" class="sort-select">
+        <option value="featured">Sort: Featured</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name">Name: A–Z</option>
+      </select>
+    </div>
+
+    <div id="productGrid" class="product-grid"></div>
+    <p id="noResults" class="no-results">No sneakers match that filter yet — try another category.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">GR<span>I</span>T</div>
+        <p>A small sneaker boutique for people who actually wear their shoes out.</p>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="shop.html">Running</a></li>
+          <li><a href="shop.html">Basketball</a></li>
+          <li><a href="shop.html">Lifestyle</a></li>
+          <li><a href="shop.html">Skate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <div class="social-links">
+          <a href="#">IG</a>
+          <a href="#">TT</a>
+          <a href="#">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 GRIT Sneaker Boutique. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>

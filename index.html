@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRIT — Sneaker Boutique</title>
+<meta name="description" content="GRIT is a small sneaker boutique for runners, hoopers and street riders. Shop running, basketball, lifestyle and skate sneakers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">GR<span>I</span>T</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-page="home">Home</a></li>
+      <li><a href="shop.html" data-page="shop">Shop</a></li>
+      <li><a href="about.html" data-page="about">About</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="container hero">
+    <div>
+      <p class="hero-eyebrow">RUNNING · BASKETBALL · LIFESTYLE · SKATE</p>
+      <h1>Sneakers built for the pavement, not the shelf.</h1>
+      <p>GRIT is a small boutique stocking sneakers we'd actually wear ourselves — tested on real runs, real courts, real streets, before they ever hit the rack.</p>
+      <div class="hero-actions">
+        <a href="shop.html" class="btn btn-primary">Shop the collection</a>
+        <a href="about.html" class="btn">Our story</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 42c0-6 4-9 10-11l16-6c3-6 9-10 16-10 5 0 8 3 9 7l3 10c8 1 15 5 20 11 3 4 5 7 5 10 0 3-2 5-5 5H10c-3 0-4-2-4-4v-12z" fill="#3a5cff" opacity="0.9"/>
+        <path d="M6 42c0-6 4-9 10-11l16-6c3-6 9-10 16-10 5 0 8 3 9 7l3 10c8 1 15 5 20 11 3 4 5 7 5 10 0 3-2 5-5 5H10c-3 0-4-2-4-4v-12z" stroke="#141414" stroke-width="1.5"/>
+        <path d="M14 48h72" stroke="#141414" stroke-width="2"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="section-head">
+      <div>
+        <h2>Shop by category</h2>
+        <p>Four categories, each fine-tuned for a different kind of grind.</p>
+      </div>
+      <a href="shop.html" class="btn btn-small">View all</a>
+    </div>
+    <div class="values-grid">
+      <a href="shop.html" class="value-card">
+        <h4>Running</h4>
+        <p>Lightweight builds for daily mileage and race day.</p>
+      </a>
+      <a href="shop.html" class="value-card">
+        <h4>Basketball</h4>
+        <p>Ankle support and cushioning for hard cuts on hard courts.</p>
+      </a>
+      <a href="shop.html" class="value-card">
+        <h4>Lifestyle</h4>
+        <p>Everyday pairs that hold up outside the gym too.</p>
+      </a>
+      <a href="shop.html" class="value-card">
+        <h4>Skate</h4>
+        <p>Grippy soles and reinforced stitching for board feel.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="container section-tight" style="border-top:1px solid var(--line);">
+    <div class="stats-row">
+      <div>
+        <div class="stat-num">6k+</div>
+        <div class="stat-label">Pairs shipped nationwide</div>
+      </div>
+      <div>
+        <div class="stat-num">42</div>
+        <div class="stat-label">Sneaker models curated</div>
+      </div>
+      <div>
+        <div class="stat-num">4.8</div>
+        <div class="stat-label">Average customer rating</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">GR<span>I</span>T</div>
+        <p>A small sneaker boutique for people who actually wear their shoes out.</p>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="shop.html">Running</a></li>
+          <li><a href="shop.html">Basketball</a></li>
+          <li><a href="shop.html">Lifestyle</a></li>
+          <li><a href="shop.html">Skate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <div class="social-links">
+          <a href="#">IG</a>
+          <a href="#">TT</a>
+          <a href="#">X</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 GRIT Sneaker Boutique. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
