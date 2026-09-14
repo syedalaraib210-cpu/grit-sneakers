@@ -16,15 +16,15 @@
    product photography — everything else keeps working.
    --------------------------------------------------------- */
 const PRODUCTS = [
-  { id: 'p01', name: 'Vantage Runner',   category: 'Running',    price: 8500,  color: '#3a5cff', tag: 'New' },
-  { id: 'p02', name: 'Aero Strike',      category: 'Running',    price: 7200,  color: '#4ade80', tag: null },
-  { id: 'p03', name: 'Court Dominator',  category: 'Basketball', price: 11200, color: '#ff5a4e', tag: 'Hot' },
-  { id: 'p04', name: 'Rim Breaker',      category: 'Basketball', price: 9800,  color: '#ffd23f', tag: null },
-  { id: 'p05', name: 'Alley Classic',    category: 'Lifestyle',  price: 6400,  color: '#a78bfa', tag: null },
-  { id: 'p06', name: 'Street Low',       category: 'Lifestyle',  price: 5900,  color: '#f472b6', tag: 'Sale' },
-  { id: 'p07', name: 'Grind Deck',       category: 'Skate',      price: 6800,  color: '#38bdf8', tag: null },
-  { id: 'p08', name: 'Ledge Slide',      category: 'Skate',      price: 7100,  color: '#fb923c', tag: null },
-  { id: 'p09', name: 'Vantage Runner 2', category: 'Running',    price: 9200,  color: '#3a5cff', tag: 'New' },
+  { id: 'p01', name: 'Vantage Runner',   category: 'Running',    price: 8500,  color: '#d4a373', tag: 'New', image: 'images/vantage-runner.jpg' },
+  { id: 'p02', name: 'Aero Strike',      category: 'Running',    price: 7200,  color: '#c17a4d', tag: null, image: 'images/aero-strike.jpg' },
+  { id: 'p03', name: 'Court Dominator',  category: 'Basketball', price: 11200, color: '#a8763e', tag: 'Hot', image: 'images/court-dominator.jpg' },
+  { id: 'p04', name: 'Rim Breaker',      category: 'Basketball', price: 9800,  color: '#ffd27a', tag: null, image: 'images/rim-breaker.jpg' },
+  { id: 'p05', name: 'Alley Classic',    category: 'Lifestyle',  price: 6400,  color: '#8b5e3c', tag: null, image: 'images/alley-classic.jpg' },
+  { id: 'p06', name: 'Street Low',       category: 'Lifestyle',  price: 5900,  color: '#e0a458', tag: 'Sale', image: 'images/street-low.jpg' },
+  { id: 'p07', name: 'Grind Deck',       category: 'Skate',      price: 6800,  color: '#6f4a2f', tag: null, image: 'images/grind-deck.jpg' },
+  { id: 'p08', name: 'Ledge Slide',      category: 'Skate',      price: 7100,  color: '#b98a52', tag: null, image: 'images/ledge-slide.jpg' },
+  { id: 'p09', name: 'Vantage Runner 2', category: 'Running',    price: 9200,  color: '#d4a373', tag: 'New', image: 'images/vantage-runner-2.jpg' },
 ];
 
 function sneakerSVG(color) {
@@ -159,7 +159,8 @@ function initShopPage() {
       card.innerHTML = `
         <div class="product-media">
           ${p.tag ? `<span class="product-tag">${p.tag}</span>` : ''}
-          <div class="swatch" style="background:radial-gradient(circle at 30% 20%, ${p.color}33, transparent 60%), #1a1a1a">
+          <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="swatch" style="display:none; background:radial-gradient(circle at 30% 20%, ${p.color}33, transparent 60%), #1a1a1a">
             ${sneakerSVG(p.color)}
           </div>
         </div>
@@ -278,8 +279,11 @@ function initCartPage() {
       const row = document.createElement('div');
       row.className = 'cart-item';
       row.innerHTML = `
-        <div class="swatch-sm" style="background:radial-gradient(circle at 30% 20%, ${product.color}33, transparent 60%), #1a1a1a">
-          ${sneakerSVG(product.color)}
+        <div class="swatch-sm">
+          <img src="${product.image}" alt="${product.name}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="swatch" style="display:none; background:radial-gradient(circle at 30% 20%, ${product.color}33, transparent 60%), #1a1a1a">
+            ${sneakerSVG(product.color)}
+          </div>
         </div>
         <div>
           <div class="cart-item-name">${product.name}</div>
