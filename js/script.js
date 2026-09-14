@@ -393,6 +393,26 @@ function initBackToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+/* ---------------------------------------------------------
+   8. SCROLL REVEAL — fade+rise sections into view
+   --------------------------------------------------------- */
+function initScrollReveal() {
+  const targets = document.querySelectorAll(
+    '.value-card, .about-grid > div, .contact-layout > div, .section-head, .stats-row'
+  );
+  targets.forEach(el => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  targets.forEach(el => observer.observe(el));
+}
 
 /* ---------------------------------------------------------
    INIT
@@ -403,4 +423,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCartPage();
   initContactForm();
   initBackToTop();
+  initScrollReveal();
 });

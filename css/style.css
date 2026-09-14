@@ -663,13 +663,14 @@ h1, h2, h3, h4 {
 .map-box {
   aspect-ratio: 16 / 10;
   border: 1px solid var(--line);
-  background: repeating-linear-gradient(45deg, var(--bg-alt) 0 10px, var(--bg) 10px 20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dim);
-  font-size: 14px;
   margin-top: 28px;
+  overflow: hidden;
+}
+
+.map-box iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* =========================================================
@@ -759,4 +760,230 @@ h1, h2, h3, h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* =========================================================
+   Shine, glow & motion polish
+   ========================================================= */
+
+/* subtle warm glow across the whole page background */
+body {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(255, 210, 122, 0.06), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(212, 163, 115, 0.05), transparent 45%),
+    var(--bg);
+}
+
+/* animated gold shimmer on the hero heading */
+.hero h1 {
+  background: linear-gradient(90deg, var(--text) 0%, var(--accent-2) 50%, var(--text) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* light-sweep effect when hovering the primary button */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn-primary:hover::after { left: 125%; }
+
+/* product cards lift and glow gold on hover */
+.product-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 0 1px var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+/* category/value cards get a softer lift */
+.value-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  border-color: var(--accent);
+}
+
+/* scroll-reveal: elements fade + rise into view */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* extra breakpoint for small phones */
+@media (max-width: 480px) {
+  .hero h1 { font-size: 34px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .stats-row { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .cart-item { grid-template-columns: 70px 1fr; row-gap: 8px; }
+  .cart-item .remove-item { grid-column: 2; justify-self: start; }
+  .filter-bar { flex-direction: column; align-items: stretch; }
+}
+
+
+/* =========================================================
+   Modern glow upgrade
+   ========================================================= */
+
+/* floating glow orbs behind the hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::before {
+  width: 380px;
+  height: 380px;
+  background: rgba(255, 210, 122, 0.18);
+  top: -120px;
+  right: 10%;
+  animation: float-a 10s ease-in-out infinite;
+}
+
+.hero::after {
+  width: 280px;
+  height: 280px;
+  background: rgba(212, 163, 115, 0.16);
+  bottom: -80px;
+  left: 5%;
+  animation: float-b 12s ease-in-out infinite;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 30px); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(25px, -20px); }
+}
+
+.hero > div, .hero-visual { position: relative; z-index: 1; }
+
+/* glassy header with a glowing bottom edge */
+.site-header {
+  background: rgba(36, 22, 17, 0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--accent-2), transparent) 1;
+}
+
+/* gradient, glowing primary button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  border: none;
+  color: #1a1005;
+  box-shadow: 0 0 0 rgba(255, 210, 122, 0);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  color: #1a1005;
+  box-shadow: 0 0 24px rgba(255, 210, 122, 0.5);
+  transform: translateY(-2px);
+}
+
+/* outline buttons get a soft glow on hover too */
+.btn:not(.btn-primary):hover {
+  box-shadow: 0 0 16px rgba(212, 163, 115, 0.35);
+}
+
+/* glowing gradient border sweep on product cards */
+.product-card {
+  position: relative;
+  border-color: var(--line);
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-2), transparent 40%, transparent 60%, var(--accent));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.product-card:hover::before { opacity: 1; }
+
+/* glowing price and stat numbers */
+.product-price,
+.stat-num {
+  text-shadow: 0 0 18px rgba(255, 210, 122, 0.35);
+}
+
+/* gradient divider lines instead of flat hairlines on section heads */
+.section-head {
+  border-bottom: none;
+  position: relative;
+}
+
+.section-head::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent 70%);
+}
+
+/* nav logo glow */
+.logo span {
+  text-shadow: 0 0 14px rgba(255, 210, 122, 0.6);
+}
+
+/* cart badge glow */
+.cart-count {
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  color: #1a1005;
+  box-shadow: 0 0 10px rgba(255, 210, 122, 0.5);
 }
